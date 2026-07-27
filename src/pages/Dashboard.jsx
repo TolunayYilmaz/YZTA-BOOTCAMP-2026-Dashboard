@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   Users, Activity, FileText, Bot,
-  TrendingUp, Clock, CheckCircle, AlertCircle,
+  TrendingUp, Clock, CheckCircle, AlertCircle, Wifi, WifiOff,
 } from 'lucide-react'
 import {
   LineChart, Line, BarChart, Bar, XAxis, YAxis,
@@ -10,6 +10,7 @@ import {
 } from 'recharts'
 import StatCard from '../components/cards/StatCard'
 import SectionHeading from '../components/ui/SectionHeading'
+import { healthCheck } from '../api/authApi'
 
 const mockStats = {
   totalUsers: 1247,
@@ -66,14 +67,17 @@ const CustomTooltip = ({ active, payload, label }) => {
 export default function Dashboard() {
   const [stats, setStats] = useState(mockStats)
   const [loading, setLoading] = useState(false)
+  const [apiStatus, setApiStatus] = useState('checking')
 
   useEffect(() => {
     setLoading(true)
-    const timer = setTimeout(() => {
-      setStats(mockStats)
-      setLoading(false)
-    }, 500)
-    return () => clearTimeout(timer)
+    healthCheck()
+      .then(() => setApiStatus('online'))
+      .catch(() => setApiStatus('offline'))
+      .finally(() => {
+        setStats(mockStats)
+        setLoading(false)
+      })
   }, [])
 
   return (
@@ -82,6 +86,28 @@ export default function Dashboard() {
         icon={Activity}
         title="Genel Bakis"
         subtitle="Sistem durumu ve istatistikleri"
+        action={
+          <div className="flex items-center gap-2 text-xs font-medium">
+            {apiStatus === 'online' && (
+              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald/10 text-emerald-dark rounded-full">
+                <Wifi size={12} />
+                Backend Bagli
+              </span>
+            )}
+            {apiStatus === 'offline' && (
+              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-red-500/10 text-red-500 rounded-full">
+                <WifiOff size={12} />
+                Backend Baglanti Disi
+              </span>
+            )}
+            {apiStatus === 'checking' && (
+              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 text-gray-500 rounded-full">
+                <div className="w-3 h-3 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
+                Kontrol Ediliyor
+              </span>
+            )}
+          </div>
+        }
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

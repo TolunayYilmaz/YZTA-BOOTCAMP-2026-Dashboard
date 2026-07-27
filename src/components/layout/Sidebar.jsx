@@ -2,13 +2,14 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import {
   LayoutDashboard, Users, Settings, LogOut,
-  Bot, ChevronLeft, ChevronRight,
+  Bot, MessageSquare, ChevronLeft, ChevronRight,
 } from 'lucide-react'
 import { logout } from '../../store/actions/authActions'
 import Logo from '../ui/Logo'
 
 const navItems = [
   { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
+  { to: '/chat', icon: MessageSquare, label: 'AI Chat' },
   { to: '/users', icon: Users, label: 'Kullanicilar' },
   { to: '/settings', icon: Settings, label: 'Ayarlar' },
 ]

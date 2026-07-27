@@ -4,6 +4,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
+import Chat from './pages/Chat'
 import UsersPage from './pages/UsersPage'
 import Settings from './pages/Settings'
 
@@ -21,6 +22,7 @@ export default function App() {
         }
       >
         <Route path="/" element={<Dashboard />} />
+        <Route path="/chat" element={<Chat />} />
         <Route path="/users" element={<UsersPage />} />
         <Route path="/settings" element={<Settings />} />
       </Route>
