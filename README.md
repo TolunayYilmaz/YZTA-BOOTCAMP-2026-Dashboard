@@ -11,7 +11,7 @@ Modern, minimalist ve kurumsal tasarim diliyle hazirlanmis, SaaS ve is akisi oda
 | Ad | Rol |
 |---|---|
 | Beyza Nur Ercan | Scrum Master & Product Owner, Backend & System Architect |
-| Tolunay YILMAZ | Frontend Developer & UX Designer |
+| Tolunay YILMAZ | Frontend Developer & UX Designer, Backend & System Architect |
 
 ---
 
@@ -24,7 +24,7 @@ Modern, minimalist ve kurumsal tasarim diliyle hazirlanmis, SaaS ve is akisi oda
 - Docker ve mikroservis mimarisi
 - LangGraph ajan orkestrasyonu
 
-### Tolunay YILMAZ (Frontend Developer & UX Designer)
+### Tolunay YILMAZ (Frontend Developer & UX Designer, Backend & System Architect)
 - Dashboard arayuzu tasarimi ve gelistirmesi
 - React + Vite kurulumu ve mimarisi
 - Tailwind CSS v4 ile SaaS/Minimalist tema olusturma
@@ -32,6 +32,7 @@ Modern, minimalist ve kurumsal tasarim diliyle hazirlanmis, SaaS ve is akisi oda
 - Kimlik dogrulama akisi (JWT tabanli giris/kayit)
 - Grafik ve gorsellestirme (Recharts)
 - Responsive tasarim ve UX optimizasyonu
+- Backend altyapisi ve API gelistirme
 
 ---
 
