@@ -10,21 +10,21 @@ Modern, minimalist ve kurumsal tasarim diliyle hazirlanmis, SaaS ve is akisi oda
 
 | Ad | Rol |
 |---|---|
-| Beyza Nur Ercan | Scrum Master & Product Owner |
-| Tolunay YILMAZ | Frontend Gelistirici |
+| Beyza Nur Ercan | Scrum Master & Product Owner, Backend & System Architect |
+| Tolunay YILMAZ | Frontend Developer & UX Designer |
 
 ---
 
 ## Gorev Dagilimi
 
-### Beyza Nur Ercan (Scrum Master & Product Owner)
+### Beyza Nur Ercan (Scrum Master & Product Owner, Backend & System Architect)
 - Proje yonetimi ve sprint planlamasi
 - Backend altyapisi ve API gelistirme
 - Veritabani tasarimi (PostgreSQL + pgvector)
 - Docker ve mikroservis mimarisi
 - LangGraph ajan orkestrasyonu
 
-### Tolunay YILMAZ (Frontend Gelistirici)
+### Tolunay YILMAZ (Frontend Developer & UX Designer)
 - Dashboard arayuzu tasarimi ve gelistirmesi
 - React + Vite kurulumu ve mimarisi
 - Tailwind CSS v4 ile SaaS/Minimalist tema olusturma
@@ -237,7 +237,7 @@ npm run preview
 
 ```bash
 # Terminal 1 - Backend
-cd YZTA-BOOTCAMP-2026-BNE-main
+cd YZTA-BOOTCAMP-2026-Backend
 docker-compose up -d
 uvicorn src.main:app --reload
 
