@@ -237,7 +237,7 @@ npm run preview
 
 ```bash
 # Terminal 1 - Backend
-cd YZTA-BOOTCAMP-2026-Backend
+cd YZTA-BOOTCAMP-2026-BNE-main
 docker-compose up -d
 uvicorn src.main:app --reload
 
